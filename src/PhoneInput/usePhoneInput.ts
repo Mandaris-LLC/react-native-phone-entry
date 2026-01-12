@@ -19,14 +19,14 @@ export const usePhoneInput = ({
 }: PhoneInputProps) => {
   const inputRef = useRef<TextInput | null>();
   const [callingCode, setCallingCode] = useState<CallingCode>(
-    defaultValues?.callingCode || '+994'
+    defaultValues?.callingCode || '+1'
   );
   const [phoneNumber, setPhoneNumber] = useState<string>(
-    value || defaultValues?.phoneNumber || '+994'
+    value || defaultValues?.phoneNumber || ''
   );
   const [modalVisible, setModalVisible] = useState(false);
   const [countryCode, setCountryCode] = useState<CountryCode>(
-    defaultValues?.countryCode || 'AZ'
+    defaultValues?.countryCode || 'US'
   );
   const [mask, setMask] = useState<Mask>(
     getFullMaskPhoneNumber(callingCode, countryCode)
